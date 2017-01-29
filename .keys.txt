@@ -1,0 +1,73 @@
+DB15 4 pin keying, pin 2 low:
+
+2-9-10-11-12
+
+Mask	Sig
+00000	00000	Saturn
+00001	00001	Playstation (~1)
+~~~~~	~~~~~	00 (free) (1)
+~~~~~	~~~~~	01 (free) (1)
+~~~~~	~~~~~	10 (free) (1)
+~~~~~	~~~~~	11 (free) (1)
+00010	00010	PC-FX (~1)
+~~~~~	~~~~~	00 (free) (1)
+~~~~~	~~~~~	01 (free) (1)
+~~~~~	~~~~~	10 (free) (1)
+~~~~~	~~~~~	11 (Mahjong) (1)
+00011	00011	PC-Engine (~1)
+~~~~~	~~~~~	1 (free) (1)
+00100	00100	Dongles
+00101	00101	CD32
+00110	0011x	Mouse
+00111	0011x	Mouse
+01000	010xx	Timer
+01001	010xx	Timer
+01010	010xx	Timer
+01011	010xx	Timer
+01100	011xx	2 Player
+01101	011xx	2 Player
+01110	011xx	2 Player
+01111	011xx	2 Player
+10000	1x0xx	Analogue (Voltmace)
+10001	1x0xx	Analogue (BBC, Dragon)
+10010	1x0xx	Analogue (Voltmace)
+10011	1x0xx	Analogue (BBC, Dragon)
+10100	101xx	Jaguar
+10101	101xx	Jaguar
+10110	101xx	Jaguar
+10111	101xx	Jaguar
+11000	1x0xx	Analogue (Voltmace)
+11001	1x0xx	Analogue (BBC, Dragon)
+11010	1x0xx	Analogue (Voltmace)
+11011	1x0xx	Analogue (BBC, Dragon)
+11100	111xx	Neo Geo
+11101	111xx	Neo Geo
+11110	111xx	Neo Geo
+11111	111xx	Neo Geo
+
+(1) will conflict with DB9
+
+DB9 2 pin keying, pins 1 & 2 low:
+
+1-2-3-4-7-9
+
+123479	123479
+000000	000xxx	NES/SNES
+000010	000xxx	NES/SNES
+000011	000xxx	NES/SNES
+000100	000xxx	NES/SNES
+000101	000xxx	NES/SNES
+000110	000xxx	NES/SNES
+000111	000xxx	NES/SNES
+001000	0010xx	(Dongles)
+001001	0010xx	(Dongles)
+001010	0010xx	(Dongles)
+001011	0010xx	(Dongles)
+001100	00110x
+001101	00110x
+001110	00111x	N64/GC
+001111	00111x	N64/GC
+
+
+Note 1: 1/2 shared with DB15 14/15
+Note 2: 1/2 must both be low for detection

@@ -1,0 +1,7 @@
+Mini pad controller
+TCPP 20002
+HPS-55
+
+Throttle: byte 4 bits 5 & 7, byte 5 bit 4
+Break: byte 5 bits 0-3
+

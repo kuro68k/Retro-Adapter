@@ -1,0 +1,1 @@
+avrdude -p atmega168 -B 1 -V -U flash:w:RetroAdapterV2.hex

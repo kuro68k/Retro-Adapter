@@ -1,0 +1,1 @@
+srec_cat release.hex -I RAbootloader.hex -I -o combined.hex -I

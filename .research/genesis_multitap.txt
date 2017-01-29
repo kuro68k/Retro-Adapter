@@ -1,0 +1,354 @@
+======================================================
+How to communicate with a Genesis Multi-tap.
+Version 1.0
+Date: Thu Sep 25, 2008
+Author: Raphael Assenat <raph@raphnet.net>
+Source: http://www.raphnet.net/divers/documentation/genesis_multitap.txt
+======================================================
+
+-- TABLE OF CONTENT --
+  1) Introduction
+  2) Pinout
+  3) Hardware handshake
+  4) Protocol
+  5) Auto-detecting the multi-tap (and other controllers)
+  6) Parallel port interface example
+  7) Sample C source code for parallel port interface
+
+
+---------------
+1) Introduction
+---------------
+
+This document explains how the Sega multi-tap for the Genesis console 
+communicates at the hardware level. It is hoped that this document 
+will be useful to emulator programmers and hardware designers wishing 
+to support the multi-tap.
+
+All the information here was figured out using widely available documentation
+from the emulation scene, by trial and error, and by probing a working multi-tap 
+connected to a Genesis. I tested using the following models:
+
+- Sega MK-1654. Has only one cable going to the console.
+- Sega MK-1647. Has two cable going to the console. Uses only the
+  cable labelled "Control1" for 4 player mode. (Control2 appears to
+  be a pass-thru from port B when the switch is in the "Extra" position)
+
+Please let me know if you test with another model.
+
+References:
+
+- Sega Genesis hardware notes Version 0.8 (03/02/01), by Charles MacDonald
+http://cgfm2.emuviews.com
+
+- Sega Six Button Controller Hardware Info, Version 1.0 by Charles Rosenberg
+http://www.cs.cmu.edu/~chuck/infopg/segasix.txt
+
+
+---------
+2) Pinout
+---------
+
+Pin      Description/names
+ 1       D-pad up. Interpreted as bit 0 in this document.
+ 2       D-pad down. Interpreted as bit 1 in this document.
+ 3       D-pad left. Interpreted as bit 2 in this document.
+ 4       D-pad right. Interpreted as bit 3 in this document.
+ 5       Vcc (5 volts)
+ 6       Normally B/A. Real name: TL
+ 7       normally Select. Real name: TH
+ 8       Gnd (button common)
+ 9       Normally C/Start. Real name: TR
+
+Normally, all buttons are active low (this includes the D-pad). In this 
+document, data read from pins 1-4 is inverted (1 = pressed, 0 = released).
+
+When using a regular controller, TH is an output while TL and TR 
+are inputs. With the multi-tap however, TR becomes an output. 
+
+
+---------------------
+3) Hardware handshake
+---------------------
+
+The multi-tap communicates by the mean of 4 data bits (pins 1-4) and
+3 handshake bits. 
+
+TH is normally high. During communication, it is held low. It appears that
+TH must rise and fall again before subsequent transfers. At the moment
+I don't know if there is a minimum high time.
+
+When the console changes the level of TR, the multi-tap latches
+new data. Once it is ready, the multi-tap changes the level of TL
+to let the console know that new data is ready. 
+
+    ________    __    __         __    __       ___________
+TR          |__|  |__|  |__ ... |  |__|  |_____|
+    __________    __    __         __    __       _________    
+TL            |__|  |__|  |__ ... |  |__|  |_____|
+    ____                                              _____
+TH      |____________________________________________|
+                                            _____
+Data ---------<>-<>-<>-<>-<>- ... <>-<>-<>-<_____>---------
+
+
+
+-----------
+4) Protocol
+-----------
+
+Let's start with an example. Say after 18 cycles, we receive this 
+from a multi-tap:
+
+ff e f e f 000 00 000 00 00
+^  ^ ^ ^ ^  ^  ^   ^  ^  ^-- Unused (due do 3btn controllers)
+|  | | | |  |  |   |  '----- Controller D status
+|  | | | |  |  |   '-------- Controller C status
+|  | | | |  |  '------------ Controller B status
+|  | | | |  '--------------- Controller A status
+|  | | | '------------------ Controller D Id
+|  | | '-------------------- Controller C Id
+|  | '---------------------- Controller B Id
+|  '------------------------ Controller A Id
+'--------------------------- Fixed
+
+In this example, the controllers in port A to D are of the 6btn, 3btn, 6btn 
+and 3btn types respectively. The multi-tap only sends the necessary bits 
+for the type of controller. When a port is empty, no bits are transmitted for 
+it. It it therefore mandatory to consider Id bits when interpreting the received
+data.
+
+The following controller Ids are known:
+Id       Controller type
+--------------------------
+0xE      6 Button controller
+0xF      3 Button controller
+0x0      No controller
+
+Controller status is reported using 2 or 3 nibbles depending on the type of 
+controller. The bits are to be interpreted this way (Most significant bit first):
+
+Bit    Meaning
+----------------------
+1      D-pad left
+2      D-pad right
+3      D-pad down
+4      D-pad up
+5      Start button
+6      A button
+7      C button
+8      B button
+9      Mode button (6btn only)*
+10     X button (6btn only)
+11     Y button (6btn only)
+12     Z button (6btn only)
+
+
+Yes, the MODE button is usable as a regular button it would seem. 
+Charles Rosenberg's Sega Six button controller documentation version 1.0
+did not mention it, but it is available at Pulse-3 on pin 4. Maybe not on all 6
+button controllers?
+
+For more information about the 6 Button controllers, consult:
+http://www.cs.cmu.edu/~chuck/infopg/segasix.txt
+
+
+-------------------------------------------------------
+5) Auto-detecting the multi-tap (and other controllers)
+-------------------------------------------------------
+
+The level observed on D0-D3 with different different TH
+values (and sequence) depends on the type of controller 
+connected.
+
+Applying 4 negative going pulses as described in the segasix.txt
+document and logging the D0-D3 levels during each cycle gives
+a unique result for all the peripherals I tried.
+
+            1      2      3      4     < cycle
+           H L    H L    H L    H L    < TH level
+---------------------------------------
+Nothing:   f f    f f    f f    f f
+3 Button:  f 3    f 3    f 3    f 3
+6 Button:  f 3    f 0    f f    f 3 
+Multi-tap: 3 f    3 f    3 f    3 f
+
+
+Note: Unlike elsewhere in this document, the values in
+this section are not inverted. They represent the true 
+logical levels on the pins.
+
+
+----------------------------------
+6) Parallel port interface example
+----------------------------------
+
+For testing, I built the following parallel port Interface. The main
+difference with the 'Direct pad pro' interface is that DB9 pin 9 is connected
+to parallel port pin 6 instead of pin 13. A simple switch could be used to create
+a multi-purpose adapter.
+
+Parallel port pin            DB9 pin
+----------------------------------
+1 (nStrobe OUT used as IN)   1 (Up)
+2 (Data0 OUT)                7 (TH (usually SELECT))
+6 (Data4 OUT)                9 (TR (usually C/Start))
+10 (nAck IN)                 3 (Left)
+11 (Busy IN)                 4 (Right)
+12 (Paper-out IN)            6 (TL (usually B/A))
+14 (LineFeed OUT used as IN) 2 (Down))
+18-18 (Gnd)                  8 
+
+DB9 pin 5 (Vcc) is connected to the +5volt line of an USB port. I don't
+think that using diodes on data pins to power 4 controllers 
+and the multi-tap would work.
+
+
+---------------------------------------------------
+7) Sample C source code for parallel port interface
+---------------------------------------------------
+
+/********************************************************************
+ * Sample program for using the sega multi-tap with a parallel port.*
+ * Protocol and parallel port interface information available       *
+ * in the following document:                                       *
+ *                                                                  *
+ * http://www.raphnet.net/divers/documentation/genesis_multitap.txt *
+ *                                                                  *
+ * This source code is in the public domain. Compile using DJGPP    *
+ * under DOS.                                                       *
+ ********************************************************************/
+#include <stdio.h>
+#include <unistd.h> // for usleep
+#include <pc.h> // for outportb and inportb
+
+#define PORT_DATA	0x378
+#define PORT_STATUS	(PORT_DATA+1)
+#define PORT_CONTROL	(PORT_DATA+2)
+
+#define TH_LOW()	do { last_out &= ~0x01; outportb(PORT_DATA, last_out); } while(0)
+#define TH_HIGH()	do { last_out |= 0x01; outportb(PORT_DATA, last_out); } while(0)
+#define TR_LOW()	do { last_out &= ~0x10; outportb(PORT_DATA, last_out); } while(0)
+#define TR_HIGH()	do { last_out |= 0x10; outportb(PORT_DATA, last_out); } while(0)
+
+static unsigned char last_out = 0x00;
+
+static unsigned char readGen()
+{
+	unsigned char d,s,c;
+	unsigned char res=0;
+	
+	d = inportb(PORT_DATA);
+	s = inportb(PORT_STATUS);
+	c = inportb(PORT_CONTROL);
+
+	if (c & 0x01) // up
+		res |= 0x01;
+	if (c & 0x02) // dn
+		res |= 0x02;
+	if (s & 0x40) // lf
+		res |= 0x04;
+	if (s & 0x80) // rt
+		res |= 0x08;
+	if (s & 0x10) // C/Start TR
+		res |= 0x10;
+	if (s & 0x20) // B/A     TL
+		res |= 0x20;
+
+	// let all buttons be active high
+	res ^= 0x34;
+	
+	return res;		
+}
+
+static void printnib(unsigned char tmp)
+{
+	int j;
+	for (j=0x08; j; j>>=1)
+		putchar(tmp&j?'1':'0');
+}
+
+static void printState(unsigned char nibs[18])
+{
+	int i,ctl;
+	int pos = 6; // first data nibble
+
+	/* Filter apparently bad packets */
+	if (nibs[0] != nibs[1])
+		return;
+	if (nibs[0] != 0xf)
+		return;
+	
+	for (ctl=0; ctl<4; ctl++)
+	{
+		switch(nibs[ctl+2])
+		{
+			case 0xe:
+				printf("[%d]6btn: ", ctl);
+				for (i=0; i<3; i++,pos++) {
+					printnib(nibs[pos]);
+				}
+				break;
+				
+			case 0xf:
+				printf("[%d]3btn: ", ctl);
+				for (i=0; i<2; i++,pos++) {
+					printnib(nibs[pos]);							
+				}
+				break;
+			case 0x0:
+				printf("[%d]None ", ctl);
+				break;
+			default:
+				printf("???");
+		}
+		printf("  ");
+	}
+	printf("\n");
+}
+
+int main(void)
+{
+	int i;
+
+	TH_HIGH();
+	usleep(100000);
+
+	for (;;)
+	{
+		static unsigned char tmp, last;
+		unsigned char nibs[18];
+
+		TH_LOW();
+		usleep(100);
+	
+		for (i=0; i<18; i++)
+		{
+			if (i%2)
+				TR_HIGH();
+			else
+				TR_LOW();
+			
+			// wait for handshake transition on TL. This
+			// will hang forever if it is no multi-tap...
+			do {	
+				tmp = readGen();
+			} while ((tmp&0x20) == last);
+			
+			nibs[i] = tmp & 0xf;
+			
+			last = tmp&0x20;
+		}
+
+		printState(nibs);
+		
+		TR_HIGH();
+		TH_HIGH();
+		
+		usleep(16670);
+	}
+	
+	return 0;
+}
+
+

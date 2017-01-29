@@ -1,0 +1,5 @@
+Command		Name		Response							Notes
+-----------------------------------------------------------------------------------------
+0x00		ID			0x09 00 20 							(Gamecube standard pad)
+0x41		Origins		0x00 80 84 7B 84 82 1D 1D 02 02
+0x40030x	Status

@@ -1,0 +1,90 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=EUC-JP">
+  <title>3do.html</title>
+</head><body link="#ffffff" background="3do_files/elecbg.jpg" 
+text="#ffffff" vlink="#cc66cc">
+  <center><img src="3do_files/3do_logo.gif"></center>
+  <h1>パナソニック３ＤＯのコントロールパッドの解析</h1><p>
+<font face="Helvetica">
+<table border="0" width="100%"><tbody><tr>
+<td width="33%"></td>
+<td align="center" width="33%">
+cpc3-cosh7-0-0-cust827.cos2.cable.ntl.com
+,
+12845th
+</td>
+<td align="right" width="33%"><font color="#ffe0e0">
+1997/03/19 UPDATED
+</font></td></tr></tbody></table>
+</font>
+
+  </p><hr>
+<center><blink><h3><b>---- 無保証 ----</b></h3></blink></center>
+
+  <dl><ol>
+    <h2><li>ピンアサイン(D-SUB9P)<p></p></li></h2>
+
+    <table border="1">
+<tbody><tr><th>＃</th><th>信号名</th><th>説明</th></tr>
+<tr><td>1</td><td>GND</td></tr>
+<tr><td>2</td><td>Vcc(5V)</td></tr>
+<tr><td>3</td><td>Audio.1(1v-pp)</td><td>ヘッドホン(o)</td></tr>
+<tr><td>4</td><td>Audio.2(1v-pp)</td><td>ヘッドホン(o)</td></tr>
+<tr><td>5</td><td>Vcc(5V)</td></tr>
+<tr><td>6</td><td>P/S</td><td>シフト/ロード(o)</td></tr>
+<tr><td>7</td><td>CLOCK(125KHz)</td><td>シフトクロック(o)</td></tr>
+<tr><td>8</td><td>GND</td></tr>
+<tr><td>9</td><td>DATA</td><td>ボタンデータ(i)</td></tr>
+</tbody></table>
+    <p><a href="http://kaele.com/%7Ekashima/games/3do-t1.txt">↑↑何じゃこりゃ？？</a>
+
+    </p><h2><li>通信フォーマット<p></p></li></h2>
+同期式シリアル通信である。 継続するコントローラーがある場合は、
+そのまま１Ｐデータの直後に付加すればよい。 本体は、１バイト目
+ d0, d1 の ０を検出すると継続するコントローラがあると判断する。<p>
+
+クロックは、立ち下がりでシフトし、データロードは Hiにてロード,
+Lo にてシフトモードとなる。</p><p>
+
+    </p><dl>
+<table border="1">
+<caption>データ内訳(シフト方向 →, 押下 = Hi)</caption>
+<tbody><tr><th>データ位置</th><th>d7</th><th>d6</th><th>d5</th><th>d4</th><th>d3</th><th>d2</th><th>d1</th><th>d0</th></tr>
+<tr><td>１バイト目</td><td>Ｂ</td><td>Ａ</td><td>左</td><td>右</td><td>上</td><td>下</td><td>０</td><td>０</td></tr>
+<tr><td>２バイト目</td><td>１</td><td>０</td><td>０</td><td>Ｒ</td><td>Ｒ</td><td>Ｘ</td><td>Ｐ</td><td>Ｃ</td></tr>
+</tbody></table>
+    <p><a href="http://kaele.com/%7Ekashima/games/3do-t2.txt">↑↑何じゃこりゃ？？</a></p><p>
+
+    </p><h2><li>タイミングチャート<p></p></li></h2>
+<img src="3do_files/3do_tim.gif">
+
+    </dl>
+
+    <h2><li>コントローラ等価回路<p></p></li></h2>
+    <dl>
+      <dd><img src="3do_files/pdfmid.gif" align="middle"><a 
+href="http://kaele.com/%7Ekashima/games/3do_tr.pdf">スーパースト２Ｘ</a>(TESTED!)
+
+    </dd></dl>
+
+  </ol></dl>
+<font face="Helvetica"><hr>
+<table bgcolor="#01004e" border="0" cellpadding="4" cellspacing="0" 
+width="100%"><tbody><tr><td align="right" valign="top" width="33%">E-mail</td>
+<td align="center" valign="top" width="33%"><img 
+src="3do_files/maddr2.gif" 
+alt="[羈&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;��&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;喝婚&#65533;眼&#65533;&#65533;膊宴&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;箙&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;吾&#65533;&#65533;&#65533;篋&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;篋&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;
+障&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;主鎧&#65533;＜&#65533;若&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;腟吟&#65533;&#65533;&#65533;&#65533;&#65533;翫&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;障&#65533;&#65533;&#65533;&#65533;"><br>-- LINK 
+FREE --</td>
+<td align="right" valign="top" width="33%">&nbsp;</td>
+</tr>
+<tr>
+<td align="left" valign="bottom"><a href="http://kaele.com/%7Ekashima"><font
+ size="+2">HOME</font></a></td>
+<td align="center" valign="top"></td>
+<td align="right" valign="bottom"><a 
+href="http://kaele.com/%7Ekashima/games/"><font size="+2">LAST</font></a></td>
+</tr></tbody></table>
+</font>
+
+</body></html>

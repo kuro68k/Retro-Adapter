@@ -1,0 +1,4 @@
+sync:
+
+Pluse width: 				0.30us
+Total length D0 is low for: 2.25us - 2.875us

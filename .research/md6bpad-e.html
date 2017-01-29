@@ -1,0 +1,90 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Interface Protocol of SEGA MegaDrive's 6-Button-Controller</title>
+</head><body text="#ffffff" vlink="#0000ff" bgcolor="#000000" link="#00ffff">
+
+<h1>Interface Protocol of SEGA MegaDrive's 6-Button-Controller</h1>
+<pre>Pin Assign (D-SUB9P)
+# SignalName |   Explanation (Direction)
+   ----------+---------------------------------
+    1. D0    | Data         (Controller -&gt; Mainframe)
+    2. D1    | Data         (Controller -&gt; Mainframe)
+    3. D2    | Data         (Controller -&gt; Mainframe)
+    4. D3    | Data         (Controller -&gt; Mainframe)
+    5. +5V   | PowerSupply  (Supplied to Controller by Mainframe)
+    6. D4    | Data         (Controller -&gt; Mainframe)
+    7. Sel   | SelectSignal (Mainframe -&gt; Controller)
+    8. GND   | Ground
+    9. D5    | Data         (Controller -&gt; Mainframe)
+
+# All signals are TTL compatible.
+
+<hr>
+In Case of 3-Button-Controller
+
+ Sel  D0 D1 D2 D3 D4 D5
+ Low  UP DW LO LO A  ST
+ High UP DW LF RG B  C
+
+   # LO --- Always Low
+   # UP --- Up of Cross Key
+   # DW --- Down of Cross Key
+   # LF --- Left of Cross Key
+   # RG --- Right of Cross Key
+   # A ---- Trigger Button A
+   # B ---- Trigger Button B
+   # C ---- Trigger Button C
+   # ST --- Start Button
+   ## Low -&gt; Pressed , High -&gt; Not Pressed
+
+
+<hr>
+Data Aquisition Sequence of 6-Button-Controller
+
+Sel   D0 D1 D2 D3 D4 D5
+Low   UP DW LO LO A  ST
+High  UP DW LF RG B  C
+Low   UP DW LO LO A  ST
+High  UP DW LF RG B  C   # If there is two up-edge in 1.1 milli seconds,
+Low   LO LO LO LO A  ST  # D0 - D3 go Low as Sel goes Low.
+High  Z  Y  X  MD HI HI  # Make Sel High and read D0 - D3.
+Low   HI HI HI HI A  ST  # Check that D0 - D3 go High as Sel goes Low.
+High  UP DW LF RG B  C   # Once this sequence take place
+Low   UP DW LO LO A  ST  # sequence can't be started for 1.8 milli seconds
+.                        # after the first up-edge of Sel.
+.                        # Only Datas read in 1.6 milli seconds from the
+.                        # first up-edge of Sel are reliable.
+
+   # LO --- Always Low
+   # HI --- Always High
+   # UP --- Up of Cross Key
+   # DW --- Down of Cross Key
+   # LF --- Left of Cross Key
+   # RG --- Right of Cross Key
+   # A ---- Trigger Button A
+   # B ---- Trigger Button B
+   # C ---- Trigger Button C
+   # X ---- Trigger Button X
+   # Y ---- Trigger Button Y
+   # Z ---- Trigger Button Z
+   # ST --- Start Button
+   # MD --- Mode Button
+   ## Low -&gt; Pressed , High -&gt; Not Pressed
+
+Time parameters were measured by using my PC's timer.
+It seems that the time is measured by discharging of
+a capacitor in a 6-Button-Controller. It may mean
+parameters differ one by one controller.
+Please choose values you think proper for parameters.
+
+</pre>
+
+<!--A HREF="http://www.hongo.ecc.u-tokyo.ac.jp/~t50942/index-e.html"-->
+<a href="http://applause.elfmimi.jp/">Ein Terakawa</a><br>
+<!--Dept. of Chemistry and Biotechnology
+Faculty of Engineering
+The Univ. of Tokyo
+-->
+<br>
+<!--t50942@hongo.ecc.u-tokyo.ac.jp-->
+applause@@elfmimi.jp
+</body></html>

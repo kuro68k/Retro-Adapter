@@ -1,0 +1,513 @@
+===============================================================================
+                              DENSHA DE GO! FINAL
+-------------------------------------------------------------------------------
+                                  General FAQ
+===============================================================================
+Version: 0.5
+Date: 25/01/2005
+Author: PkerUNO
+Email: pkeruno@sblorgh.org
+AIM/iChat: pkeruno@mac.com (Please specify you got the address from this FAQ)
+MSN Messenger: richard@kcmultimedia.co.uk (Please send me a message instantly
+explaining you got the address from this FAQ)
+
+This is not only the first draft of the FAQ, but my first ever FAQ, so I am
+sure it will contain inaccuracies and glaring omissions. If you find any errors
+or would like to contribute/comment, please do not hesitate to contact me via
+the addresses above. Thanks!
+
+===============================================================================
+ INDEX
+===============================================================================
+
+01) Introduction
+02) Controls
+03) Rules and Signs
+04) Driver's Work
+05) Conductor's Work
+06) Museum
+07) Option
+08) Routes
+09) Rolling Stock
+10) Version History
+11) Legal Info & Credits
+
+===============================================================================
+ 01 - INTRODUCTION
+===============================================================================
+
+Hello and welcome to this FAQ about Taito's train driving simulator, "Densha
+de GO! Final". As the name implies, this will be the last version of the
+rather popular series since its first arcade incarnation in 1997. Densha de GO!
+Final is Taito's way of saying "farewell" to the series and its fans, and is
+available in Normal and Limited Edition versions, for PlayStation 2. The games
+are identical, but the Limited Edition comes with an N-Gauge model of a
+Yamanote Line E231 train.
+
+Unlike other train simulators, such as Microsoft Train Simulator or Trainz,
+Densha de GO! is still an arcade game at heart, and as such the emphasis is
+on gameplay and not realism. Final has greatly improved graphics in comparison
+with the older versions, but still retains a points system, and will not let
+you explore the route without restrictions. Densha de GO! also inspired the
+freeware train simulator BVE, which is situated in-between the "arcade" and
+"realism" simulators.
+
+Densha de GO! Final presents four routes: Yamanote Line, Chuo Line, Osaka Loop
+Line and Tokaido Line. Each line has several "diagrams", or sections of line
+to complete with a specific train and at a specific time of day. Many are
+locked and need to be unlocked or bought with credits obtained from completing
+diagrams. One of the biggest new features of Final is the "Chain" system. By
+passing checkpoints, completing certain actions and stopping correctly
+without committing errors, your chain grows ever longer. The longer the chain,
+the more points are multiplied by.
+
+Right, with that out of the way, let's start with the FAQ!
+
+===============================================================================
+ 02 - CONTROLS
+===============================================================================
+
+The default controller used for Densha de GO! is the humble Dual Shock 2. There
+are several configurations you can choose, but this is the default one:
+
+D-PAD:
+- Up = Decrease traction.
+- Down = Increase traction.
+
+BUTTONS:
+- Square = Increase brake.
+- Cross = Decrease brake / Cancel.
+- Triangle = Full brakes (press Square once to then apply emergency brakes).
+- Circle = Sound horn / Confirm.
+
+- Start = Start game (from title screen).
+- Select = Remove/Restore driving aids from screen.
+
+- L1 = Zero traction / Operate left doors.
+- L2 = Use left item.
+- R1 = Release brakes / Operate right doors.
+- R2 = Use right item.
+
+The left analogue stick is used to change the camera angle in stations. The
+right analogue stick can be pressed (R3) to move the camera to outside the
+train.
+
+The controls for the official controllers should be self-explanatory. I'll
+write more when mine arrives, but for now know that:
+- The left lever is traction.
+- The right lever is brake.
+- The pedal is the horn.
+
+The Pause Menu comes up if you press Start when the train is on the move. The
+items, from top to bottom are:
+- Unpause: You can also press Start again.
+- Quit Diagram: Yes/No.
+- Restart Diagram: Yes/No.
+- In-Game Sound: See "OPTION".
+- Display Option: See "OPTION".
+- Display Adjust: See "OPTION".
+- Save.
+
+===============================================================================
+ 03 - Rules and Signs
+===============================================================================
+
+Since the game is almost completely in Japanese (and kanji at that, not at all
+easy to translate!), you must know the rules and regulations of the Japanese
+Railway system before you play. You'll probably pick them up as you go along
+anyway, but here are all the rules I have been able to find so far. The list in
+the manual is much longer, and I'll try to provide a literal translation soon.
+
+LIGHTS
+------
+
+The standard Japanese signal is made of 4 lights: Red, Green, and two Ambers.
+Green means go, Red stop. So far so good. A green-amber light precedes a single
+amber, and carries with it a 65km/h speed restriction. This restriction is
+enforced until the next signal. A single amber precedes a double amber, and
+restricts you to 45km/h. Again, you must not go over this until you reach the
+next signal. A double amber light restricts you to 25km/h and means that a red
+is next. Failure to respect any signal will lead to ATS kicking in and an
+immediate penalty brake application. This will set you back severely, so make
+sure it doesn't happen!
+
+Advance signals are round and present the state of the next signal. These are
+usually placed on curves, or other places where a signal would usually not be
+very visible. A vertical line indicates green, a diagonal line warns of an
+upcoming amber, and a horizontal line represents an impending red light.
+
+LINESIDE MARKERS
+----------------
+
+Speed restrictions are announced by white rectangular signs next to the rails,
+with the speed restriction written on them. ATC restrictions are on small
+coloured circular markers mounted on poles. Two black-and-white triangles
+facing each other cancel any former speed restriction.
+
+Grade changes are indicated by a T-shaped marker on the side of the tracks. A
+downward-sloping T indicates a fall, upward-sloping is a rise, and a straight
+board is... well, a flat section, believe it or not!
+
+The standard stop marker is an orange diamond mounted on a pole. At some
+stations it may be mounted on the platform roof. Watch out though, most large
+stations have several of these markers, each one with a carriage number
+printed inside them. You have to stop at the one which matches your train
+length - not too easy, considering the game doesn't tell you how long your
+train is! It's easy to work out if you have the distance meter showing, though.
+
+ATC
+---
+
+ATC is Automatic Train Control, and is a system installed on most of the modern
+JR trains. It does not automatically drive the train (it wouldn't be much of a
+game if it did), but it does act as a "nanny", making sure you don't break the
+speed limit.
+
+The current speed limit will show both in the bottom right-hand corner of the
+screen (it's the orange one), and will also display in your speedometer. The
+way it manifests itself depends on the train you are driving, but the speed
+limit will usually be shown by an arrow on the rim of the speedometer, with the
+"forbidden zone" shaded red. ATC will penalise you for breaking the ATC speed
+limit, which is often different to the actual line speed limit. Remember: if
+your train has ATC active, ATC speed restrictions take priority over line
+speed restrictions!
+
+The only sound ATC will make is a "ding" when you pass a new speed restriction,
+although I am aware that on some new trains, ATC actually speaks to the driver!
+
+ATS
+---
+
+ATS is the Automatic Train Supervision system, and will make sure you respect
+signals. All trains have ATS, unlike ATC. With ATS, no action will be take if
+you pass the speed limit (indicated by the white figures in the bottom right),
+but the game will take away points every 5 seconds you stay over the limit. ATS
+will activate if you pass a restrictive signal over the allowed speed. When ATS
+activates, you will hear a warning bell. You have about 2 seconds to act or ATS
+will activate the emergency brakes and lock out your controls. If this happens,
+all you can do is wait for the train to come to a stop (and for the passengers
+to fall over). Once stopped, you can release the brakes and carry on. If you
+pass a red light, you will receive no warning, just an emergency brake
+application.
+
+RULES
+-----
+
+- Drivers must respect the speed limit. Passing a speed limit counts as a minor
+fault, passing a restrictive signal's speed limit is a major fault.
+- Drivers must not leave the station before the doors have closed. In the game,
+you will be penalised if you try to accelerate before the door lamp lights.
+- Drivers must not sound the horn unless absolutely necessary. Use it sparingly
+or you will be penalised.
+- Drivers should sound the horn if they encounter trackside workers. You will
+gain bonus points for doing this, you will not be penalised if you don't.
+- Drivers must arrive on time. Being early is just as bad as being late.
+- Drivers should treat passengers with respect. They don't like to be jolted
+so go easy on the brakes!
+
+===============================================================================
+ 04 - DRIVER'S WORK
+===============================================================================
+
+The first option on the main menu is the one you will be spending most (if not
+all) your time in. This is the "driving" aspect of the game, and is the easiest
+mode to play if you don't understand Japanese. Once you enter this mode, you
+will be presented with a list of diagrams for the Yamanote line. Press up and
+down to select a different diagram, or left and right to change the line.
+
+Each diagram shows you the name of the service, the train used, difficulty, 
+time of day, weather, and stations covered. If locked, it will show you how
+much you need to pay to buy it, and if you've completed it, a grade star will
+be shown. Some diagrams are blank, and need to be unlocked by playing others.
+
+Once you have selected your diagram, you will be presented with a model of the
+train, and a graphical representation of the stations served. Some diagrams
+are divided into sections, shown at the bottom of the screen. You might take a
+few stations at a time in each section, and once you have completed them, the
+entire section will be selectable to play in one go. Sections in green have yet
+to be played, the blue ones have been completed, and the grey ones are still
+locked.
+
+It is now that you must chose Normal or the new Enjoy Mode. Normal Mode is...
+the normal mode, whereas Enjoy Mode (selectable by pressing Triangle) is more
+lenient. For a start, you get to choose two items from a list of five. From top
+to bottom: Speed Up (improved traction), Quick Brake (improved braking), Time
+Stop (Halts the timer for a limited time), Double Score (multiplies new score
+points by two), Restore Health (tops your life bar back up). The left item is
+activated with L2, the right item with R2, and you get five of each. Enjoy mode
+also doesn't deduct any life points until you arrive at the station, allowing
+you to at least stop before the game fails you (if you lose too many life
+points).
+
+Normal Mode is Densha de GO!'s original arcade mode, and is not as lenient as
+Enjoy Mode. After a brief loading screen, you get to see all of the stations
+you will stop at. Make sure you notice if you're operating an express service
+and will be skipping stations! Wait or press Circle to start. You have some
+time before you need to leave, so familiarise yourself with the interface.
+
+Starting from the top right and going clockwise:
+- Points = Your current amount of points.
+- Chains = The size of your chain, resets to zero after an error.
+- Lifebar = You have 100 lifepoints, represented by 10 silhouettes. Lose all 10
+and it's Game Over. When I say "you will be penalised", this is what you will
+lose.
+- Scheduled Arrival Time = In yellow. Aim to arrive at precisely this time.
+- Current Time = In turquoise. It will turn a lighter shade when you're within
+10 seconds of the Scheduled Arrival Time, yellow when you're over by 20
+seconds, and red if you're over 30. You will also start losing points.
+
+- Navi = Show you the state of upcoming signals, and more importantly, shows
+you where stations, checkpoints and speed restrictions are.
+- Camera Icon = Will only show up when you enter a station. It means you can
+use the left analogue stick to change your viewpoint. Press it in (L3) to
+return to the default in-cabin view.
+
+- ATC Restriction = Upcoming restrictions flash, current restriction stays lit.
+
+- Station Name = Normally useless unless you can read Japanese, but it does
+have an important function. If the text on the left is yellow, you will be
+stopping at the next station. If it's green, you're not stopping. If the text
+becomes larger, the distance meter shows you the next checkpoint.
+- Distance Meter = Shows you how far away the next stop marker is. Needless to
+say, aim for zero! It turns light green when you can stop, yellow if you
+overrun, and red if you've overshot by more than the acceptable amount. Again,
+prepare to lose points. Once you're 10m away, the display switches from metres
+to centimetres to aid your stop.
+
+- G-Sensor Meter = Shows the forces acting upon your passengers. Watch it
+increase as you brake and accelerate, but don't let it go red - this means that
+your passengers are falling over and won't hesitate to complain! Like most
+things in this game, red equals penalty.
+- Speedometer = Shows your current speed, as well as current and upcoming speed
+restrictions. On either side of the speedometer are your traction and brake
+levels. Traction is on the left, and ranges from 0 to 5, top to bottom. Brake
+is on the left, from 0 to 8. Pressing brake over 8 engages the Emergency brake.
+
+There's quite a lot to keep an eye on, and you can disable any single element
+by going to Options, or press Select to get rid of them all. You can't do this
+inside stations, though - only once you're on the move. Now, back to the game.
+
+You will hear a melody coming from the platform, and a voice announcing the
+train's departure. Once you hear the door closing chimes (or the hiss of the
+doors closing), release the brakes by pressing Cross repeatedly, or R1. Now
+WAIT. If you accelerate before the door lamp lights (to the left of your
+screen), you will be penalised. As soon as the lamp lights, you're free to
+accelerate. A percentage will appear on the screen (I assume this is how full
+your train is), and your conductor will acknowledge departure.
+
+Departing from the station is easy. Travelling is slightly harder. The main
+thing to look out for is speed restrictions. Watch your Navi, watch your
+speedometer, and make sure you don't go over the limit. Keeping traction at 2-3
+is usually fine to keep the train at a constant speed. Make sure you brake in
+time for lower restrictions, accelerate when the level is lifted, but make
+sure you know where the next station is! You should only start thinking of
+braking at around 400m from the station.
+
+The actual amount of braking depends your current speed, but a good application
+of 5-6 with about 250-200m to go will usually do the trick. Don't brake too
+late (if you're doing over 40km/h with 40m to go you WILL overrun) or too early
+(chugging along at 20km/h with 150m to go will take a LONG time). It's bad
+practice to accelerate inside a station, and if you have to (you've guessed
+it), you will be penalised. Keep an eye on the time, too. If you're early,
+brake earlier and take the extra time to try and get as close to 0cm as
+possible. It is possible, and getting within 10cm either way is considered
+excellent. My current best is -6cm, right on time.
+
+Now watch the G-Sensor Meter. If it goes red, you're braking too hard. Ideally,
+you should be going at about 10km/h with 15m to go. Apply 2-3 brake now and
+you should glide to a halt without jolting anyone. Don't forget though: the
+performance of every train is different, and you will need to adopt different
+strategies for rain and stations on gradients. Also, some lines have narrower
+stop margins. The default is 5m either way, but may be reduced to 2m either
+way!
+
+In any case, stop within the stop margin and the game will cut to a replay of
+your stop, presenting a list of penalties applied. Once all penalties have been
+tallied, you can wait or press Circle to continue. The screen will go dark and
+then the map will come up and you can prepare to depart again!
+
+Sometimes, you will get a bonus round instead! I'm not sure what the conditions
+are yet, but it helps to get a lot of excellent stops in a row. The bonus round
+sees you trying to couple two trains together. You drive the locomotive on the
+right. When the timer starts counting down, release brakes and accelerate.
+Don't go over 5km/h or you will automatically fail. As you approach the other
+locomotive, brake to about 3km/h. Don't slow down too much or you will simply
+bounce off the other locomotive.
+
+While you're travelling, you might notice a long oval approaching in your Navi.
+This is a Checkpoint. A yellow checkpoint is a Time Trap, a blue one is a Speed
+Trap. For the Time checkpoint, it will show you the time you should pass the
+point on top, with the time you will pass it on the bottom. Aim to pass the
+point at exactly the scheduled time to earn maximum points. Plus or Minus 3
+seconds is fine, any more and you will not get bonus points. The same principle
+applies to the Speed checkpoint. Target speed is on top, your speed under it.
+3km/h either way is acceptable. On harder diagrams, watch out  for extended
+checkpoint sections, where you will have to keep at a constant speed. Going
+under is fine, going over will not get you any points.
+
+On express routes, don't forget that you might be skipping stations. Check the
+Next Station text. If it's got some yellow text on the left, you're stopping.
+If the text on the left is green, you're passing through. A station you're
+stopping at appears as a yellow circle on your navi, a station you're passing
+through is a green circle.
+
+That is basically it. There is, of course, more - for example, sounding your
+horn at certain places (near trackside workers, before level crossings, when
+passing trains) will also net you bonus points. Apart from the trackside
+workers, I have not worked out exactly when and where you get extra bonus
+points for sounding your horn. Don't sound it too much though, or you will be
+penalised.
+
+===============================================================================
+ 05 - CONDUCTOR'S WORK
+===============================================================================
+
+A brand-new gameplay mode in Densha de GO!, this lets you take the place of
+the conductor. Wile it's certainly a novel idea, unless you can read Japanese
+(specifically: place-names in kanji) it is impossible to play well. You can
+probably blag your way through it, but don't expect to get a great score!
+
+Route selection works in the same way as Driver's Work does, only that this
+time you're asked if you want to play 1-player or 2-player mode. I haven't
+tried 2-player mode yet, but I'm guessing it lets you play as either the
+conductor or driver.
+
+You start in the station, believe it or not, and the train is preparing to
+depart. Your first job is to close the doors. The key is closing the doors
+right after the "doors closing" announcement. Make sure that the station
+announcer has FINISHED saying "Doa ga shimarimasu, gochuii kudasai" before
+pressing L1 or R1 (depending on the side the platform is on) to close the
+doors.
+
+The driver trundles off, and you now have to announce the next station. This is
+where it gets hard. If you studied the route map beforehand and recognise the
+kanji for the next station, press the D-Pad direction next to the station name
+and press Circle to confirm. If you got it right, congratulations! If you
+guessed and got it right, I hope you remember what the kanji looks like! If you
+got it wrong, you still have a few seconds to find the right one.
+
+When the driver nears the station, you will have to re-announce the next
+station. Select the same kanji as before and you should get bonus points. A
+word of warning - the correct kanji won't be in the same place as before, so
+remember the shape! Again, you have several tries in case you get it wrong.
+
+When the train comes to a stop, press L1 or R1 (again, depending on the side
+the platform is) to open the doors. There doesn't appear to be any particular
+"good timing" aspect to this - just press once the train has stopped.
+
+===============================================================================
+ 06 - MUSEUM
+===============================================================================
+
+The museum section is the train enthusiast's haven. It's divided into two
+parts - Train Introduction and Movie Show. Movie Show contains the two videos
+seen before the Start screen, and videos showing individual train stock, which
+are unlocked by completing a diagram with that train.
+
+Train Introduction is an image gallery with a twist. By pressing Square when
+viewing a train, you get to play around with the actual 3D model used by the
+game. Use the left analogue stick to rotate around the model, and the right
+analogue stick to zoom in and out. Triangle moves the camera to the next
+carriage, and Square to go back to the image. Select toggles the text on the
+screen, and Circle moves you to the next train.
+
+===============================================================================
+ 07 - OPTION
+===============================================================================
+
+This is where you change the game's settings. From top to bottom:
+
+DISPLAY OPTION
+--------------
+
+- Speedometer: Analogue/Digital/Off.
+- Distance Meter: On/Off.
+- G-Sensor Meter: On/Off. Shows what forces your passengers are going through.
+- Navigation Meter: On/Off. Shows upcoming stations and signals.
+- Next Signal Preview: On/Off. Shows you the state of the next signal.
+- Checkpoints: On/Off.
+- Display Adjust: Move the screen so it's centred on your TV.
+
+SOUND VOLUME
+------------
+
+- Background Music Select: For the menus.
+- In-Game Sound: Announcer Only/Background Music. You can choose to only hear
+your conductor or have music playing too.
+- Background Music Volume: If it's on at all.
+- Sound Effect Volume: These include the "bonus point" sounds.
+- Announcer Volume: Your conductor.
+- Station Volume: Station announcements.
+- Train Volume: This controls the sounds your train makes.
+
+CONTROLLER
+----------
+
+- Vibration: Off/Soft/Normal/Strong. Determines how much the Dual Shock will
+vibrate.
+- Control Type: 2 Handle A/2 Handle B/1 Handle. Different train control
+configurations.
+
+SAVE/LOAD
+---------
+
+- Data Load: Loads a save from the Memory Card.
+- Data Save: Saves your current state to the Memory Card.
+- Auto-Save: On/Off. Will automatically save when something changes (like your
+credit balance or settings).
+
+DEFAULT INITIALIZE
+------------------
+
+Will reset all options and diagram cleared states to their original condition.
+This effectively erases your save.
+
+===============================================================================
+ 08 - ROUTES
+===============================================================================
+
+Coming soon...
+
+===============================================================================
+ 09 - ROLLING STOCK
+===============================================================================
+
+Coming soon...
+
+===============================================================================
+ 10 - VERSION HISTORY
+===============================================================================
+
+- Version 0.5 (25/01/2005)
+First draft. Most information present, but details on rules, signalling and ATC
+are probably inaccurate. Routes and Rolling Stock still missing.
+
+===============================================================================
+ 11 - LEGAL INFO & CREDITS
+===============================================================================
+
+Thanks to:
+- Greng (http://www.greng.net/) for the original Densha de GO! FAQ.
+- NTSC UK (http://www.ntsc-uk.com/review.php?platform=ps2&game=DenshaDeGoFinal)
+for some facts.
+
+This may be not be reproduced under any circumstances except for personal,
+private use. It may not be placed on any web site or otherwise distributed
+publicly without advance written permission. Use of this guide on any other
+web site or as a part of any public display is strictly prohibited, and a
+violation of copyright.
+
+The only websites permitted to use this document are:
+- http://www.sblorgh.org/
+- http://www.gamefaqs.com/
+- http://www.gamespot.com/
+
+Please do not ask to host this document, only the sites above are guaranteed to
+contain the most up-to-date version.
+
+All trademarks and copyrights contained in this document are owned by their
+respective trademark and copyright holders. "Densha de GO!" is a registered
+trademark by Taito Corporation, Japan.
+
+Copyright 2005 Richard Whittaker (PkerUNO)
+===============================================================================
